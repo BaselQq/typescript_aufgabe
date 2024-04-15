@@ -17,3 +17,36 @@ console.log(reducedNumbers);
 const numbers2: number[] = [1,2,3,4,5,6,7,8,20];
 const checkedNumbers: boolean = numbers2.some((number: number) => number > 10);
 console.log(checkedNumbers)
+
+
+// BONUS
+
+const list = [15, 6, 3213, 9, 0, 12, 8464 , 1, 1264, 481, 186, 1031, 194];
+
+// Sort these numbers in descending order.
+const sortedList: number[] = list.sort((a: number, b: number) => (a > b ? -1 : 0));
+console.log(sortedList);
+// Square these numbers.
+
+const squaredList: number[] = sortedList.map((number: number) => Math.pow(number, 2));
+console.log(squaredList);
+
+// Remove the lowest two numbers and the highest 4 numbers from the list.
+squaredList.splice(0, 4);
+console.log(squaredList);
+const unsortedList: number[] = squaredList.sort((a: number, b: number) => (a > b ? 0 : -1));
+console.log(unsortedList);
+unsortedList.splice(0, 2);
+console.log(unsortedList);
+
+// Remove all numbers that are divisible by 4.
+const undivisibleNumbersList: number[] = unsortedList.filter((number: number) => number % 4 == 0);
+console.log(undivisibleNumbersList);
+
+// Add up all the numbers.
+let sum = 0;
+const sumAllNumbers = undivisibleNumbersList.forEach((num: number) => sum += num);
+console.log(sum);
+
+// What is the result?
+// 72412
